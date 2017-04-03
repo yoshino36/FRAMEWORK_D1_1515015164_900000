@@ -17,7 +17,7 @@ class ruanganController extends Controller
     {
     	return view('ruangan.tambah');
     }
-    public function simpan(Requests $input)
+    public function simpan(Request $input)
     {
     	$ruangan = new ruangan();
     	$ruangan->title = $input->title;
@@ -43,7 +43,7 @@ class ruanganController extends Controller
     }
     public function hapus($id)
     {
-        $pengguna = ruangan::find($id);
+        $ruangan = ruangan::find($id);
         $informasi = $ruangan->delete() ? 'Berhasil hapus data' : 'Gagal hapus data';
         return redirect('ruangan')->with(['informasi'=>$informasi]);
 

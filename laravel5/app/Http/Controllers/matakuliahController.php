@@ -17,11 +17,11 @@ class matakuliahController extends Controller
     {
     	return view('matakuliah.tambah');
     }
-    public function simpan(Requests $input)
+    public function simpan(Request $input)
     {
     	$matakuliah = new matakuliah();
     	$matakuliah->title = $input->title;
-    	$matakuliah->keterangan = $keterangan;
+    	$matakuliah->keterangan = $input->keterangan;
     	$informasi = $matakuliah->save() ? 'Berhasil simpan data' : 'Gagal simpan data';
     	return redirect('matakuliah')->with(['informasi'=>$informasi]);
     }
@@ -45,7 +45,7 @@ class matakuliahController extends Controller
     }
     public function hapus($id)
     {
-        $pengguna = matakuliah::find($id);
+        $matakuliah = matakuliah::find($id);
         $informasi = $matakuliah->delete() ? 'Berhasil hapus data' : 'Gagal hapus data';
         return redirect('matakuliah')->with(['informasi'=>$informasi]);
 
