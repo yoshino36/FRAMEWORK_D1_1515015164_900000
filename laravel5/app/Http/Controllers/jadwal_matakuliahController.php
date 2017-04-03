@@ -11,19 +11,11 @@ class jadwal_matakuliahController extends Controller
     //
     public function awal()
     {
-    	return "Hello dari jadwal_matakuliahController";
+    	return view('jadwal_matakuliah.awal',['data'=>jadwal_matakuliah::all()]);
 	}
-	public function tambah()
-	{
-		return $this -> simpan();
-	}
-	public function simpan()
-	{
-		$jm = new jadwal_matakuliah();
-		$jm->mahasiswa_id = '1';
-		$jm->ruangan_id = '1';
-		$jm->dosen_matakuliah_id = '1';
-		$jm->save();
-		return "data telah disimpan";
-	}
+	public function lihat($id)
+    {
+        $matakuliah = matakuliah::find($id);
+        return view('jadwal_matakuliah.lihat')->with(array('jadwal_matakuliah'=>$matakuliah));
+    }
 }

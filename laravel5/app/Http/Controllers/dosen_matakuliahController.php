@@ -11,18 +11,11 @@ class dosen_matakuliahController extends Controller
     //
     public function awal()
     {
-    	return "Hello dari dosen_matakuliahController";
+    	return view('dosen_matakuliah.awal',['data'=>dosen_matakuliah::all()]);
 	}
-	public function tambah()
-	{
-		return $this -> simpan();
-	}
-	public function simpan()
-	{
-		$dm = new dosen_matakuliah();
-		$dm->dosen_id = '7';
-		$dm->matakuliah_id = '1';
-		$dm->save();
-		return "data telah disimpan";
-	}
+	 public function lihat($id)
+    {
+        $dm = dosen_matakuliah::find($id);
+        return view('dosen_matakuliah.lihat')->with(array('dosen_matakuliah'=>$dm));
+}
 }

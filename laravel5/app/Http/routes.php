@@ -35,9 +35,23 @@ Route::get('ruangan/edit/{ruangan}','ruanganController@edit');
 Route::post('ruangan/edit/{ruangan}','ruanganController@update');
 Route::get('ruangan/hapus/{ruangan}','ruanganController@hapus');
 Route::get('ruangan/tambah','ruanganController@tambah');
-// Route::get('/', function () {
-//     return view('welcome');
-// });
-//     Route::get('hello-world', function () {
-//     return 'Hello-World';
-// });
+
+Route::get('dosen','dosenController@awal');
+Route::get('dosen/lihat/{dosen}','dosenController@lihat');
+Route::post('dosen/simpan','dosenController@simpan');
+Route::get('dosen/edit/{dosen}','dosenController@edit');
+Route::post('dosen/edit/{dosen}','dosenController@update');
+Route::get('dosen/hapus/{dosen}','dosenController@hapus');
+Route::get('dosen/tambah','dosenController@tambah');
+
+Route::get('dosen_matakuliah','dosen_matakuliahController@awal');
+Route::get('dosen_matakuliah/lihat/{dosen_matakuliah}','dosen_matakuliahController@lihat');
+
+Route::get('jadwal_matakuliah','jadwal_matakuliahController@awal');
+Route::get('jadwal_matakuliah/lihat/{jadwal_matakuliah}','jadwal_matakuliahController@lihat');
+ Route::get('/', function () {
+     return view('welcome');
+ });
+     Route::get('hello-world', function () {
+     return 'Hello-World';
+ });
