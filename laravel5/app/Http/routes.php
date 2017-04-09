@@ -49,6 +49,14 @@ Route::get('dosen_matakuliah/lihat/{dosen_matakuliah}','dosen_matakuliahControll
 
 Route::get('jadwal_matakuliah','jadwal_matakuliahController@awal');
 Route::get('jadwal_matakuliah/lihat/{jadwal_matakuliah}','jadwal_matakuliahController@lihat');
+
+Route::get('mahasiswa','mahasiswaController@awal');
+Route::get('mahasiswa/lihat/{mahasiswa}','mahasiswaController@lihat');
+Route::post('mahasiswa/simpan','mahasiswaController@simpan');
+Route::get('mahasiswa/edit/{mahasiswa}','mahasiswaController@edit');
+Route::post('mahasiswa/edit/{mahasiswa}','mahasiswaController@update');
+Route::get('mahasiswa/hapus/{mahasiswa}','mahasiswaController@hapus');
+Route::get('mahasiswa/tambah','mahasiswaController@tambah');
  Route::get('/', function () {
      return view('welcome');
  });
